@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GAROFALO ADVOCACIA — Rafael Baida Garofalo">
+<title>GAROFALO ADVOCACIA</title>
+<style>
+  :root{
+    --paper:#f3f1ec;
+    --ink:#171717;
+    --muted:#66635e;
+    --line:#d7d3cb;
+    --accent:#8b8274;
+    --max:1180px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:
+      linear-gradient(90deg, rgba(243,241,236,.96), rgba(243,241,236,.82)),
+      #d8d4cc;
+    color:var(--ink);
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+    line-height:1.6;
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.17;
+    background:
+      linear-gradient(90deg,
+        transparent 0 10%,
+        #57534d 10.1% 10.18%,
+        transparent 10.28% 28%,
+        #57534d 28.1% 28.18%,
+        transparent 28.28% 51%,
+        #57534d 51.1% 51.18%,
+        transparent 51.28% 76%,
+        #57534d 76.1% 76.18%,
+        transparent 76.28%),
+      linear-gradient(0deg,
+        transparent 0 18%,
+        #57534d 18.1% 18.18%,
+        transparent 18.28% 43%,
+        #57534d 43.1% 43.18%,
+        transparent 43.28% 68%,
+        #57534d 68.1% 68.18%,
+        transparent 68.28%);
+    transform:perspective(1100px) rotateY(-8deg) rotateZ(-1.5deg) scale(1.12);
+    transform-origin:center;
+  }
+  body::after{
+    content:"";
+    position:fixed;
+    width:38vw;
+    height:62vh;
+    right:4vw;
+    top:13vh;
+    pointer-events:none;
+    opacity:.12;
+    border-left:1px solid #4e4a44;
+    border-top:1px solid #4e4a44;
+    background:
+      linear-gradient(135deg, transparent 49.7%, #4e4a44 50%, transparent 50.3%),
+      linear-gradient(45deg, transparent 49.7%, #4e4a44 50%, transparent 50.3%);
+    transform:rotate(-4deg);
+  }
+  main{max-width:var(--max);margin:auto;padding:0 6vw}
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:7vh 0 5vh;
+  }
+  .mark{
+    position:relative;
+    z-index:1;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(3.8rem,10vw,8.5rem);
+    line-height:.84;
+    letter-spacing:-.065em;
+    font-weight:400;
+    margin:0;
+  }
+  .submark{
+    position:relative;
+    z-index:1;
+    margin-top:1.5rem;
+    font-size:.76rem;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .hero-bottom{
+    position:relative;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1.4fr .6fr;
+    gap:8vw;
+    align-items:end;
+  }
+  .statement{
+    max-width:650px;
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(1.35rem,2.5vw,2.15rem);
+    line-height:1.25;
+    letter-spacing:-.02em;
+  }
+  .identity{
+    border-top:1px solid var(--ink);
+    padding-top:1rem;
+    font-size:.82rem;
+    color:var(--muted);
+  }
+  .identity strong{
+    display:block;
+    color:var(--ink);
+    font-size:.95rem;
+    font-weight:500;
+    margin-bottom:.25rem;
+  }
+  section{
+    border-top:1px solid var(--line);
+    padding:8rem 0;
+  }
+  .section-grid{
+    display:grid;
+    grid-template-columns:25% 75%;
+    gap:5vw;
+  }
+  .label{
+    font-size:.68rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  h2{
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:clamp(2rem,4vw,3.5rem);
+    line-height:1.05;
+    font-weight:400;
+    letter-spacing:-.035em;
+    margin:0 0 2rem;
+  }
+  .lead{
+    max-width:760px;
+    font-size:1.08rem;
+    color:#3e3c39;
+  }
+  .areas{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    border-top:1px solid var(--line);
+  }
+  .area{
+    padding:1.5rem 1rem 1.5rem 0;
+    border-bottom:1px solid var(--line);
+    font-family:Georgia,"Times New Roman",serif;
+    font-size:1.25rem;
+  }
+  .area:nth-child(even){padding-left:2rem;border-left:1px solid var(--line)}
+  .contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:4vw;
+  }
+  .contact p{margin:.2rem 0;color:var(--muted)}
+  .contact a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent)}
+  footer{
+    border-top:1px solid var(--line);
+    padding:2rem 0 3rem;
+    display:flex;
+    justify-content:space-between;
+    gap:2rem;
+    color:var(--muted);
+    font-size:.7rem;
+    letter-spacing:.05em;
+  }
+  @media(max-width:720px){
+    main{padding:0 7vw}
+    .hero{min-height:92vh;padding-top:6vh}
+    .hero-bottom,.section-grid,.contact{grid-template-columns:1fr;gap:2.5rem}
+    section{padding:5rem 0}
+    .areas{grid-template-columns:1fr}
+    .area:nth-child(even){padding-left:0;border-left:0}
+    footer{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+<main>
+  <section class="hero" style="border-top:0;padding-top:0">
+    <div>
+      <p class="submark">Advocacia</p>
+      <h1 class="mark">GAROFALO</h1>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="statement">
+        Advocacia orientada pela responsabilidade profissional, pela precisão e pela estratégia.
+      </div>
+      <div class="identity">
+        <strong>Rafael Baida Garofalo</strong>
+        Advogado<br>
+        OAB/SP 248.991
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-grid">
+      <div class="label">Atuação</div>
+      <div>
+        <h2>Direito tratado com clareza.</h2>
+        <div class="areas">
+          <div class="area">Área de atuação — a definir</div>
+          <div class="area">Área de atuação — a definir</div>
+          <div class="area">Área de atuação — a definir</div>
+          <div class="area">Área de atuação — a definir</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-grid">
+      <div class="label">Profissional</div>
+      <div>
+        <h2>Rafael Baida Garofalo</h2>
+        <p class="lead">
+          Apresentação profissional a ser definida com o conteúdo e a trajetória
+          que o titular desejar tornar públicos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-grid">
+      <div class="label">Contato</div>
+      <div class="contact">
+        <div>
+          <h2>Vamos conversar.</h2>
+        </div>
+        <div>
+          <p>São Paulo · Brasil</p>
+          <p><a href="mailto:rafael@garofalo.adv.br">rafael@garofalo.adv.br</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>GAROFALO ADVOCACIA</span>
+    <span>© 2026 · Conteúdo institucional</span>
+  </footer>
+</main>
+</body>
+</html>
